@@ -5,7 +5,7 @@ const token = new SkyWayAuthToken({
   exp: nowInSec() + 60 * 60 * 24,
   scope: {
     app: {
-      id: '683f22f4-cfdc-4e07-8b43-e9c82516bdbd',
+      id: appId,
       turn: true,
       actions: ['read'],
       channels: [
@@ -40,7 +40,7 @@ const token = new SkyWayAuthToken({
       ],
     },
   },
-}).encode('Ub/E/BkYcAntyOlfwBf5CJiibNJ/V8o9CmD2ogHbh80=');
+}).encode(secretKey);
 
 (async () => {
   const localVideo = document.getElementById('local-video');

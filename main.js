@@ -79,7 +79,7 @@ void (async () => {
       if (publication.publisher.id === me.id) return;
 
       const subscribeButton = document.createElement('button');
-      subscribeButton.textContent = `${publication.publisher.id}: ${publication.contentType}`;
+      subscribeButton.textContent = `${publication.contentType}`;
       buttonArea.appendChild(subscribeButton);
 
       subscribeButton.onclick = async () => {

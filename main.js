@@ -116,7 +116,7 @@ void (async () => {
       await room.dispose();
 
       myId.textContent = '';
-      buttonArea.replaceChildren();
+      buttonArea.remove();
       remoteMediaArea.replaceChildren();
     };
 

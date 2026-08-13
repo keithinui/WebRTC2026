@@ -1,22 +1,32 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>RPRSystem2</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css">
+    <title>SkyWay Tutorial</title>
   </head>
-
   <body>
-    <p>ID: <span id="my-id"></span></p>
-    <div>
-      room name: <input id="room-name" type="text" />
-      <button id="join">join</button>
+    <h1>SkyWayハンズオンサンプル</h1>
+    <div class="grid-container">
+      <div id="local" class="item">
+        <video id="local-video" autoplay playsinline></video>
+        <audio id="local-audio" autoplay muted controls></audio>
+        <p class="id-text">ID: <span id="my-id"></span></p>
+        <button id="join-button" class="item" label="button">Room作成/参加</button>
+        <input id="room-name" placeholder="Room名"></input>
+        <button id="local-mute-buton" class="item" label="button" disabled>映像・音声OFF</button>
+        <button id="leave-button" class="item" label="button"　disabled>Room閉じる</button>
+      </div>
+      <div id="remote" class="item">
+        <video id="remote-video" autoplay playsinline></video>
+        <audio id="remote-audio" autoplay controls></audio>
+        <p class="id-text">ID: <span id="remote-id"></span></p>
+        <div id="button-area"></div>
+      </div>
     </div>
-    <video id="local-video" width="400px" muted playsinline></video>
-    <div id="button-area"></div>
-    <div id="remote-media-area"></div>
+
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@skyway-sdk/room/dist/skyway_room-latest.js"></script>
-    <script type="text/javascript" src="key.js"></script>
     <script type="text/javascript" src="main.js"></script>
   </body>
 </html>

@@ -117,7 +117,7 @@ void (async () => {
 
       myId.textContent = '';
       buttonArea.remove();
-      remoteMediaArea.replaceChildren();
+      remoteMediaArea.remove();
     };
 
     room.onStreamUnpublished.add((e) => {

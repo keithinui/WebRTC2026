@@ -1,8 +1,6 @@
 const { nowInSec, SkyWayAuthToken, SkyWayContext, SkyWayRoom, SkyWayStreamFactory, uuidV4 } = skyway_room;
 
 // STEP1: SkyWayAuthTokenの生成
-const appId = 'e50efb62-c752-4d10-8d8b-b254a6b164d1'
-const secretKey = 'ZqYtMvRJyEsxQR3glttoA7FLnmHDcN4ZeASkHkkaKJU='
 const token = new SkyWayAuthToken({
   jti: uuidV4(),
   iat: nowInSec(),

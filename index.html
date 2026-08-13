@@ -3,64 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <title>RPR System 2</title>
-    <link rel="icon" sizes="192x192" href="favicon.png">
-    <link rel="stylesheet" href="style.css">
+    <title>RPRSystem2</title>
   </head>
 
   <body>
-    <div class="p2p-media">
-
-      <!-- Video(Remote) -->
-      <div  div class="remote-streams" id="remote-media-area"></div>
-
-      <div class="local-stream">
-        <!-- Title, button, LAbles -->
-        <h1 class="heading">Remote Pulmonary Rehabilitation System</h1>
-        <p class="logo">
-          FDT
-        </p>
-        <p class="note">
-          <br>
-
-          <p>ID: <span id="my-id"></span></p>
-          <div>
-            room name: <input id="room-name" type="text" />
-            <button class="buttons" id="join">Join</button>
-            <button class="buttons" id="leave">Leave</button>
-          </div>
-        </p>
-
-        <!-- Video(Local) -->
-        <video id="local-video" muted playsinline></video>
-        <div id="button-area"></div>
-      </div>
-
-      <!-- Paramaters -->
-      <div class="parameters">
-        <c class="colorPR">  <a class="note">PR[bpm] </a><a class="data" id="textPR">-- </a></c>
-        <c class="colorRR">  <a class="note">RR[bpm] </a><a class="data" id="textRR">-- </a></c>
-        <c class="colorSpO2"><a class="note">SpO2[%] </a><a class="data" id="statusSpo2">-- </a></c>
-        <c class="colorOther"><a class="note">Battery[%] </a><a class="note" id="statusBatteryLavel">-- </a></c>
-      </div>
-
-      <div id="canvas_wrapper">
-        <canvas id="waveformCanvas"></canvas>
-      </div>
-
-
-
-    </div>
-
-
-    <!-- Messages and button -->
+    <p>ID: <span id="my-id"></span></p>
     <div>
-      <pre class="messages" id="js-messages"</pre>
+      room name: <input id="room-name" type="text" />
+      <button id="join">join</button>
     </div>
-
-
-
-
+    <video id="local-video" width="400px" muted playsinline></video>
+    <div id="button-area"></div>
+    <div id="remote-media-area"></div>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@skyway-sdk/room/dist/skyway_room-latest.js"></script>
     <script type="text/javascript" src="key.js"></script>
     <script type="text/javascript" src="main.js"></script>

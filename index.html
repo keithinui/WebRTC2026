@@ -19,13 +19,17 @@
 
       <div id="local" class="item">
         <h1 class="heading">Remote Pulmonary Rehabilitation System</h1>
-        <video id="local-video" autoplay playsinline></video>
-        <audio id="local-audio" autoplay muted controls></audio>
+
         <p class="id-text">ID: <span id="my-id"></span></p>
-        <button id="join-button" class="item" label="button">Room作成/参加</button>
         <input id="room-name" placeholder="Room名"></input>
         <button id="local-mute-buton" class="item" label="button" disabled>映像・音声OFF</button>
-        <button id="leave-button" class="item" label="button"　disabled>Room閉じる</button>
+
+        <button class="buttons" id="join-button" class="item" label="button">Room作成/参加</button>
+        <button class="buttons" id="leave-button" class="item" label="button"　disabled>Room閉じる</button>
+        <br>
+
+        <video id="local-video" style="height:45%;" autoplay playsinline></video>
+        <audio id="local-audio" autoplay muted controls></audio>
       </div>
 
     </div>

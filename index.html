@@ -7,8 +7,17 @@
     <title>SkyWay Tutorial</title>
   </head>
   <body>
-    <h1>SkyWayハンズオンサンプル</h1>
+
     <div class="grid-container">
+      <h1 class="heading">Remote Pulmonary Rehabilitation System</h1>
+
+      <div id="remote" class="item">
+        <video id="remote-video" autoplay playsinline></video>
+        <audio id="remote-audio" autoplay controls></audio>
+        <p class="id-text">ID: <span id="remote-id"></span></p>
+        <div id="button-area"></div>
+      </div>
+
       <div id="local" class="item">
         <video id="local-video" autoplay playsinline></video>
         <audio id="local-audio" autoplay muted controls></audio>
@@ -18,12 +27,7 @@
         <button id="local-mute-buton" class="item" label="button" disabled>映像・音声OFF</button>
         <button id="leave-button" class="item" label="button"　disabled>Room閉じる</button>
       </div>
-      <div id="remote" class="item">
-        <video id="remote-video" autoplay playsinline></video>
-        <audio id="remote-audio" autoplay controls></audio>
-        <p class="id-text">ID: <span id="remote-id"></span></p>
-        <div id="button-area"></div>
-      </div>
+
     </div>
 
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@skyway-sdk/room/dist/skyway_room-latest.js"></script>

@@ -4,53 +4,30 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css">
-    <title>RPRSystem</title>
+    <title>SkyWay Tutorial</title>
   </head>
   <body>
-
+    <h1>SkyWayハンズオンサンプル</h1>
     <div class="grid-container">
-
-      <div id="remote" class="remote-view">
-        <div class="remote-stream">
-          <video id="remote-video" autoplay playsinline></video>
-          <audio id="remote-audio" autoplay controls></audio>
-          <span class="id-text" id="remote-id">ID:</span>
-          <div id="button-area"></div>
-        </div>
+      <div id="local" class="item">
+        <video id="local-video" autoplay playsinline></video>
+        <audio id="local-audio" autoplay muted controls></audio>
+        <p class="id-text">ID: <span id="my-id"></span></p>
+        <button id="join-button" class="item" label="button">Room作成/参加</button>
+        <input id="room-name" placeholder="Room名"></input>
+        <button id="local-mute-buton" class="item" label="button" disabled>映像・音声OFF</button>
+        <button id="leave-button" class="item" label="button"　disabled>Room閉じる</button>
       </div>
-
-      <div id="local" class="local-view">
-        <h1 class="heading">Remote Pulmonary Rehabilitation System</h1>
-
-        <span class="id-text" id="my-id" ID: </span></p>
-        <input id="room-name" placeholder="Room name"></input>
-        <button id="local-mute-buton" disabled>Video Voice off</button>
-
-        <button class="buttons" id="join-button" >Join</button>
-        <button class="buttons" id="leave-button" disabled>Leave</button>
-
-        <div class="local-stream">
-          <video id="local-video" autoplay playsinline></video>
-          <audio id="local-audio" autoplay muted controls></audio>
-        </div>
+      <div id="remote" class="item">
+        <video id="remote-video" autoplay playsinline></video>
+        <audio id="remote-audio" autoplay controls></audio>
+        <p class="id-text">ID: <span id="remote-id"></span></p>
+        <div id="button-area"></div>
       </div>
-
-      <!-- Paramaters -->
-      <div class="parameter-view">
-        <c class="colorPR">  <a class="note">PR[bpm] </a><a class="data" id="textPR">-- </a></c>
-        <c class="colorRR">  <a class="note">RR[bpm] </a><a class="data" id="textRR">-- </a></c>
-        <c class="colorSpO2"><a class="note">SpO2[%] </a><a class="data" id="statusSpo2">-- </a></c>
-        <c class="colorOther"><a class="note">Battery[%] </a><a class="note" id="statusBatteryLavel">-- </a></c>
-      </div>
-
-
-
     </div>
-
 
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@skyway-sdk/room/dist/skyway_room-latest.js"></script>
     <script type="text/javascript" src="key.js"></script>
     <script type="text/javascript" src="main.js"></script>
   </body>
 </html>
-

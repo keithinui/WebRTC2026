@@ -13,24 +13,23 @@
       <div id="remote" class="remote-view">
         <video id="remote-video" autoplay playsinline></video>
         <audio id="remote-audio" autoplay controls></audio>
-        <p class="id-text">ID: <span id="remote-id"></span></p>
+        <span id="remote-id" class="id-text">ID:</span>
         <div id="button-area"></div>
       </div>
 
 
       <div id="local" class="local-view">
-        <h1>Remote Pulmonary Rehabilitation System</h1>
-        <p class="id-text">ID: <span id="my-id"></span></p>
-        <button id="join-button" class="item" label="button">Room作成/参加</button>
-        <input id="room-name" placeholder="Room名"></input>
+        <h1 class="heading">Remote Pulmonary Rehabilitation System</h1>
+        <span id="my-id" class="id-text">ID:</span><br>
+        <input id="room-name" placeholder="Room name"></input><br>
+        <button id="join-button" class="buttons">Join</button>
+        <button id="leave-button" class="buttons" disabled>Leave</button><p>
 
         <dir class="local-stream">
           <video id="local-video" autoplay playsinline></video>
         </dir>
         <audio id="local-audio" autoplay muted controls></audio>
-
-        <button id="local-mute-buton" class="item" label="button" disabled>映像・音声OFF</button>
-        <button id="leave-button" class="item" label="button"　disabled>Room閉じる</button>
+        <button id="local-mute-buton" disabled>映像・音声OFF</button>
       </div>
 
 

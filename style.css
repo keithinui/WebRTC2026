@@ -24,7 +24,7 @@ select{
 /* For grid display */
 .grid-container{
   display: grid;
-  grid-template-rows: 80vh 20vh;
+  grid-template-rows: 85vh 15vh;
   grid-template-columns: 4fr 1fr;
 }
 
@@ -53,7 +53,7 @@ select{
 }
 
 .local-stream{
-  max-height: 50vh;
+  max-height: 45vh;
   width: 100%;
   align-items: center;
   padding: 0px;

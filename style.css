@@ -57,6 +57,18 @@ select{
 
 /***********************************************************/
 /* For each items */
+.heading {
+  font-size: 20px;
+  font-family: "arial";
+  text-align: center;
+  margin-bottom: 0;
+}
+
+.buttons {
+  width: 80px;
+  height: 50px;
+}
+
 .id-text{
   font-size: 11px
 }

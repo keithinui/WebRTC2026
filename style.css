@@ -48,8 +48,6 @@ select {
 }
 
 .remote-stream {
-  max-height: 100vh;
-  height: 150%;
   width: 100%;
 }
 

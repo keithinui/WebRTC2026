@@ -13,14 +13,14 @@
       <div id="remote" class="remote-stream">
         <video id="remote-video" autoplay playsinline></video>
         <audio id="remote-audio" autoplay controls></audio>
-        <p class="id-text">ID: <span id="remote-id"></span></p>
+        <span class="id-text" id="remote-id">ID:</span>
         <div id="button-area"></div>
       </div>
 
       <div id="local" class="local-stream">
         <h1 class="heading">Remote Pulmonary Rehabilitation System</h1>
 
-        <p class="id-text">ID: <span id="my-id"></span></p>
+        <span class="id-text" id="my-id" ID: </span></p>
         <input id="room-name" placeholder="Room name"></input>
         <button id="local-mute-buton" class="item" label="button" disabled>Video Voice off</button>
 
@@ -31,8 +31,19 @@
         <audio id="local-audio" autoplay muted controls></audio>
       </div>
 
-      <div class="waveformCanvas">
+      <div class="parameters">
       </div>
+
+
+      <!-- Paramaters -->
+      <div class="parameters">
+        <c class="colorPR">  <a class="note">PR[bpm] </a><a class="data" id="textPR">-- </a></c>
+        <c class="colorRR">  <a class="note">RR[bpm] </a><a class="data" id="textRR">-- </a></c>
+        <c class="colorSpO2"><a class="note">SpO2[%] </a><a class="data" id="statusSpo2">-- </a></c>
+        <c class="colorOther"><a class="note">Battery[%] </a><a class="note" id="statusBatteryLavel">-- </a></c>
+      </div>
+
+
 
     </div>
 
@@ -42,3 +53,4 @@
     <script type="text/javascript" src="main.js"></script>
   </body>
 </html>
+

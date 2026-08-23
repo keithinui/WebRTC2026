@@ -48,13 +48,13 @@ select{
 
 .remote-stream{
   max-height: 150vh;
-  height: 100%;
+  height: 110%;
   width: 100%;
 }
 
 .local-stream{
   max-height: 50vh;
-  width: 110%;
+  width: 100%;
   align-items: center;
   padding: 0px;
 }

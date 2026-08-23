@@ -10,14 +10,16 @@
 
     <div class="grid-container">
 
-      <div id="remote" class="remote-stream">
-        <video id="remote-video" autoplay playsinline></video>
-        <audio id="remote-audio" autoplay controls></audio>
-        <span class="id-text" id="remote-id">ID:</span>
-        <div id="button-area"></div>
+      <div id="remote" class="remote-view">
+        <div class="remote-stream">
+          <video id="remote-video" autoplay playsinline></video>
+          <audio id="remote-audio" autoplay controls></audio>
+          <span class="id-text" id="remote-id">ID:</span>
+          <div id="button-area"></div>
+        </div>
       </div>
 
-      <div id="local" class="local-stream">
+      <div id="local" class="local-view">
         <h1 class="heading">Remote Pulmonary Rehabilitation System</h1>
 
         <span class="id-text" id="my-id" ID: </span></p>
@@ -27,16 +29,14 @@
         <button class="buttons" id="join-button" class="item" label="button">Join Room</button>
         <button class="buttons" id="leave-button" class="item" label="button"　disabled>Leave Room</button>
 
-        <video id="local-video" style="height:45%;" autoplay playsinline></video>
-        <audio id="local-audio" autoplay muted controls></audio>
+        <div class="local-stream">
+          <video id="local-video" autoplay playsinline></video>
+          <audio id="local-audio" autoplay muted controls></audio>
+        </div>
       </div>
-
-      <div class="parameters">
-      </div>
-
 
       <!-- Paramaters -->
-      <div class="parameters">
+      <div class="parameter-view">
         <c class="colorPR">  <a class="note">PR[bpm] </a><a class="data" id="textPR">-- </a></c>
         <c class="colorRR">  <a class="note">RR[bpm] </a><a class="data" id="textRR">-- </a></c>
         <c class="colorSpO2"><a class="note">SpO2[%] </a><a class="data" id="statusSpo2">-- </a></c>

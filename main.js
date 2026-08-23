@@ -53,8 +53,8 @@ const token = new SkyWayAuthToken({
   const joinButton = document.getElementById('join-button');
   const localMuteButton = document.getElementById('local-mute-buton');
   const leaveButton = document.getElementById('leave-button');
-  const myId = document.getElementById('my-id');
-  const remoteId = document.getElementById('remote-id');
+//  const myId = document.getElementById('my-id');
+//  const remoteId = document.getElementById('remote-id');
   const remoteVideo = document.getElementById('remote-video');
   const remoteAudio = document.getElementById('remote-audio');
   const buttonArea = document.querySelector('#button-area');
@@ -93,7 +93,7 @@ const token = new SkyWayAuthToken({
     
     // STEP4: Roomに参加し自分のIDを画面に表示
     let me = await room.join();
-    myId.textContent = me.id;
+    // myId.textContent = me.id;
     
     // UIの初期化
     isJoined　= true;
@@ -119,7 +119,7 @@ const token = new SkyWayAuthToken({
       if (publication.publisher.id === me.id) return;
 
       // 相手のIDを表示
-      remoteId.textContent = publication.publisher.id;
+      // remoteId.textContent = publication.publisher.id;
 
       // 音声・映像の受信および再生用ボタンを生成
       if(buttonArea.childElementCount === 3) buttonArea.innerHTML='';
@@ -216,8 +216,8 @@ const token = new SkyWayAuthToken({
     // Roomが閉じられた際のUI処理
     const closeRoom = () => {
       buttonArea.innerHTML = '';
-      remoteId.textContent = '';
-      myId.textContent = '';
+      // remoteId.textContent = '';
+      // myId.textContent = '';
       localMuteButton.disabled = true;
       leaveButton.disabled = true;
     };

@@ -11,16 +11,16 @@
   <div class="grid-container">
 
       <div id="remote" class="remote-view">
-        <video id="remote-video" autoplay playsinline></video>
+        <div class="remote-stream">
+          <video id="remote-video" autoplay playsinline></video>
+        </div>
         <audio id="remote-audio" autoplay controls></audio>
-        <span id="remote-id" class="id-text">ID:</span>
         <div id="button-area"></div>
       </div>
 
 
       <div id="local" class="local-view">
         <h1 class="heading">Remote Pulmonary Rehabilitation System</h1>
-        <span id="my-id" class="id-text">ID:</span><br>
         <input id="room-name" placeholder="Room name"></input><br>
         <button id="join-button" class="buttons">Join</button>
         <button id="leave-button" class="buttons" disabled>Leave</button><p>
@@ -32,8 +32,12 @@
         <button id="local-mute-buton" disabled>映像・音声OFF</button>
       </div>
 
-
+      <!-- Paramaters -->
       <div class="parameter-view">
+        <c class="colorPR">  <a class="note">PR[bpm] </a><a class="data" id="textPR">24 </a></c>
+        <c class="colorRR">  <a class="note">RR[bpm] </a><a class="data" id="textRR">84 </a></c>
+        <c class="colorSpO2"><a class="note">SpO2[%] </a><a class="data" id="statusSpo2">98 </a></c>
+        <c class="colorOther"><a class="note">Battery[%] </a><a class="note" id="statusBatteryLavel">95 </a></c>
       </div>
 
 

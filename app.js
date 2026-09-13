@@ -1,6 +1,7 @@
 ﻿const textPR = document.getElementById('textPR');
 const textRR = document.getElementById('textRR');
 const textBorg = document.getElementById('textBorg');
+const container = document.getElementById("canvas_warp");
 
 var heartRateData;                // 0. Heart rate data
 var respRateData;                 // 1. Resp. rate data

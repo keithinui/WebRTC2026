@@ -98,8 +98,8 @@ const token = new SkyWayAuthToken({
     // UIの初期化
     isJoined　= true;
     localMuteButton.disabled = false;
-    joinButton.style.display = '';
-    leaveButton.style.display = 'none';
+    joinButton.style.display = 'none';
+    leaveButton.style.display = '';
     
     // STEP5: 自分の音声と映像をpublishする
     // 映像はサイマルキャストで3パターン指定する

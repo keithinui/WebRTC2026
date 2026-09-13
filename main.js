@@ -62,7 +62,7 @@ const token = new SkyWayAuthToken({
   let isJoined = false;
   let isMuted = false;
   let selectBox = null;
-  leaveButton.disabled = true;
+  leaveButton.style.display = 'none';
   
   // STEP2: 自分自身のカメラとマイクを取得して描画
   const { audio, video } = await SkyWayStreamFactory.createMicrophoneAudioAndCameraStream();
@@ -98,7 +98,8 @@ const token = new SkyWayAuthToken({
     // UIの初期化
     isJoined　= true;
     localMuteButton.disabled = false;
-    leaveButton.disabled = false;
+    joinButton.style.display = '';
+    leaveButton.style.display = 'none';
     
     // STEP5: 自分の音声と映像をpublishする
     // 映像はサイマルキャストで3パターン指定する
@@ -219,7 +220,9 @@ const token = new SkyWayAuthToken({
       // remoteId.textContent = '';
       // myId.textContent = '';
       localMuteButton.disabled = true;
-      leaveButton.disabled = true;
+      joinButton.style.display = 'none';
+      leaveButton.style.display = '';
+
     };
   
     // Roomからメンバーが抜けた時の処理

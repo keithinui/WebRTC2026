@@ -100,6 +100,10 @@ const token = new SkyWayAuthToken({
     localMuteButton.disabled = false;
     joinButton.style.display = 'none';
     leaveButton.style.display = '';
+
+    // Start Rehabilitation timer
+    timer1 = setInterval("onOneSecRihaTimer()", 1000);
+    startTime = 0;
     
     // STEP5: 自分の音声と映像をpublishする
     // 映像はサイマルキャストで3パターン指定する
@@ -222,6 +226,9 @@ const token = new SkyWayAuthToken({
       leaveButton.disabled = true;
       joinButton.style.display = '';
       leaveButton.style.display = 'none';
+
+      // Stop Rehabilitation time
+      clearInterval(timer1);
 
     };
   

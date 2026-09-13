@@ -220,8 +220,8 @@ const token = new SkyWayAuthToken({
       // remoteId.textContent = '';
       // myId.textContent = '';
       localMuteButton.disabled = true;
-      joinButton.style.display = 'none';
-      leaveButton.style.display = '';
+      joinButton.style.display = '';
+      leaveButton.style.display = 'none';
 
     };
   

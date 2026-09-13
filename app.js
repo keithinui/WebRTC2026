@@ -42,11 +42,6 @@ window.onload = function () {
   WaveStep = (ox - stdW) / Sweep;	            // Number of count up step per sample
 
   //-------------------------------------------------------------------
-  // Hide Leave button
-  leaveTrigger.style = "background:#00F00F; width:20vw; height:6vh;";
-  leaveTrigger.style.display = "none";
-
-  //-------------------------------------------------------------------
   // Make an event to cofirm closong window
   window.addEventListener('beforeunload', beforeUnloadEvent, false);
 

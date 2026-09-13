@@ -5,11 +5,12 @@ body {
 video {
   background-color: #eee;
   width: 100%;
-  height: 80%;
+  height: 100%;
 }
 
 input {
   width: 110px;
+  text-align: center;
 }
 
 button {
@@ -20,35 +21,196 @@ select {
   width: 110px;
 }
 
-/***********************************************************/
+/************************************************************************************************/
 /* For grid display */
-.grid-container {
-  display: grid;
-  grid-template-rows: 80vh 20vh;
-  grid-template-columns: 85% 15%;
+/* 
+
+   container0
+  _____________________________________________________________________________ ................ 
+ |                                         |                   |               |            :
+ |                                         |   container213    | container215  |            :
+ |                                         |   width:50%       | width:50%     |        container210
+ |      container110                       |                   |               |        height: 50%
+ |      height:60%                         |  (patien-         | (controls)    |            :
+ |      (Remote stream)                    |      information) | (local-stream)|            :
+ |                                         |___________________|_______________|................
+ |                                         |  container232                     |            :
+ |                                         |  height:80%   (buttons)           |        container230
+ |                                         |___________________________________|        height: 10%
+ |                                         |  container234                     |            :
+ |                                         |  height:20%   (messages, meta)    |            :
+ |_________________________________________|___________________________________|................
+ |                                         | PR w:20%  |  graph01 width:80%    | h:33%      :
+ |      container150                       |-----------------------------------|....        :
+ |      canvas_wrapper                     | RR w:20%  |  graph01 width:80%    | h:33%  container250
+ |      height:40%                         |-----------------------------------|....    height: 40%
+ |      (Waveform area)                    |SpO2 w:20% |  graph01 width:80%    | h:34%      :
+ |_________________________________________|___________________________________|............:...
+ :                                         :                                   :
+ :        container100                     :         container200              :
+ :<-------- width:55% -------------------->:<-------  width:45%  -------------->
+            height:100vh (viewpoint height)
+
+ */
+
+
+
+.container0 {
+  display: flex;
+  flex-direction: row;
 }
 
-.remote-view {
-  grid-row: 1 / 2;
-  grid-column: 1 / 2;
-  background: #8f8;
-  position: relative;
-}
-
-.local-view {
-  grid-row: 1 / 2;
-  grid-column: 2 / 3;
-  background: #f88;
-}
-
-.parameter-view {
-  grid-row: 2 / 3;
-  grid-column: 1 / 3;
-  background: #000;
-}
-
-.remote-stream {
+.container100 {
+  width: 55%;
   height: 100vh;
+  background-color: silver;
+  align-items: center;
+  padding: 0px;
+}
+
+.container110 {
+  height: 60%;
+}
+
+.container150 {
+  height: 40%;
+}
+
+.canvas_warp{
+  overflow: scroll;
+  width: 100%;
+  height: 100%;
+}
+.canvas_warp::-webkit-scrollbar {  /* Chrome, Safari 対応 */
+        display:none;  /* Do not show scroll bars  */
+}
+
+
+/* ----------------------------------- */
+.container200{
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+}
+/***************************************/
+.container210{
+  width: 100%;
+  height: 50%;
+  display: flex;
+  flex-direction: row;
+}
+
+.container213{
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.container215{
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ----------------------------------- */
+.container230{
+  width: 100%;
+  height: 10%;
+  padding: 0%;
+  display: flex;
+  flex-direction: column;
+}
+
+.container232{
+  width: 100%;
+  height: 80%;
+  display: flex;
+  flex-direction: row;
+}
+
+.container234{
+  width: 100%;
+  height: 20%;
+}
+
+
+/* ----------------------------------- */
+.container250{
+  width: 100%;
+  height: 40%;
+  display: flex;
+  flex-direction: column;
+  background-color: 80ff80;
+}
+
+/***************************************/
+/* ----------------------------------- */
+.parameterPR {
+  width: 100%;
+  height: 33%;
+  display: flex;
+  flex-direction: row;
+}
+.dataPR {
+  color: #00EE00;
+  width: 20%;
+  height: 100%;
+  background-color: #000000;
+  border: solid 5px #000000;
+  box-sizing: border-box;      /* Border line in a box */
+}
+
+/* ----------------------------------- */
+.parameterSpO2 {
+  width: 100%;
+  height: 33%;
+  display: flex;
+  flex-direction: row;
+}
+.dataSpO2 {
+  color: #FFFF00;
+  width: 20%;
+  height: 100%;
+  background-color: #000000;
+  border: solid 5px #000000;
+  box-sizing: border-box;      /* Border line in a box */
+}
+
+/* ----------------------------------- */
+.parameterRR {
+  width: 100%;
+  height: 34%;
+  display: flex;
+  flex-direction: row;
+}
+.dataRR {
+  color: #00FFFF;
+  width: 20%;
+  height: 100%;
+  background-color: #000000;
+  border: solid 5px #000000;
+  box-sizing: border-box;      /* Border line in a box */
+}
+
+/* ----------------------------------- */
+.graph01 {
+  width: 80%;
+  height: 100%;
+  background-color: #484848;
+  border: solid 5px #000000;
+  box-sizing: border-box;      /* Border line in a box */
+  color: white;
+}
+
+
+/***********************************************************/
+/* For each items */
+/* ----------------------------------- */
+.remote-stream {
+  max-height: 100vh;
+  position: relative;
 }
 
 .local-stream {
@@ -58,22 +220,21 @@ select {
   padding: 0px;
 }
 
-.absoluteRight {
-  position: absolute;
-  right: 30px;
+.remotteAudio {
+  position: absolute ;
+  right: 10px;
   top: 10px;
   z-index: 1;
 }
 
-.absoluteLeft {
-  position: absolute;
-  left: 30px;
+.buttonArea {
+  position: absolute ;
+  left: 10px;
   top: 10px;
+  z-index: 1;
 }
 
-
-/***********************************************************/
-/* For each items */
+/* ----------------------------------- */
 .heading {
   font-size: 20px;
   font-family: "arial";
@@ -82,8 +243,11 @@ select {
 }
 
 .buttons {
-  width: 80px;
-  height: 50px;
+  width: 90%;
+  height: 90%;
+  border-radius: 10px;
+  background-color: '';
+  font-size: 1.3vw;
 }
 
 
@@ -102,19 +266,19 @@ select {
   font-weight: bold;
 }
 
-.colorPR {
-  color: #00EE00;
+#canvas_wrapper {
+  width: 100%;
+  height: 100%;
+  margin:0 auto;
+  padding: 5px;
+  background-color: black;
+  box-sizing: border-box;      /* Border line in a box */
 }
 
-.colorSpO2 {
-  color: #FFFF00;
-}
-
-.colorRR {
-  color: #00FFFF;
-}
-
-.colorOther {
-  color: #FFFFFF;
+#waveformCanvas {
+  width: 100%;
+  height: 100%;
+  padding: 0px;
+  background-color: #484848;
 }
 

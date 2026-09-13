@@ -8,6 +8,7 @@
   </head>
   <body>
 
+  <div class="browserWindwos">
     <!-- Main Display  -->
     <div class="container0">
       <div class="container100">
@@ -33,19 +34,33 @@
 
       <div class="container200">
         <div class="container210">
-          <div class="container213">
+           <!-- Title, button, Lables -->
+           <div class="container213">
             <h1 class="heading">Remote Pulmonary Rehabilitation System</h1><p>
-            <input id="room-name" placeholder="Room name"></input>
+            <input id="room-name" placeholder="Room name"></input><p>
+
+            <a class="note">Time:</a>
+            <a class="note2" id="rihabilitationTime">00:00</a><br>
+            <a class="note">Battery[%]:</a>
+            <a class="note" id="statusBatteryLavel">--</a><br>
+            <a class="note">Borg:</a>
+            <a class="note2" id="textBorg" style="background:#f0f0f0; width:50px">--</a><br>
+            <a class="note">Vol.:</a>
+            <a class="note" id="statusVolumeLavel">--</a><br>
+
+
+
           </div>
           <div class="container215">
-            <button id="join-button" class="buttons" style="width:10vw; height:4vh;">Join Room</button>
-            <button id="leave-button" class="buttons" style="width:10vw; height:4vh;" disabled>Leave Room</button>
-
+            <div class="controls">
+              <button id="join-button" class="buttons" style="width:20vw; height:6vh;">Join Room</button>
+              <button id="leave-button" class="buttons" style="width:20vw; height:6vh;">Leave Room</button>
+            </div>
             <div class="local-stream">
               <video id="local-video" autoplay playsinline></video>
             </div>
-            <audio id="local-audio" autoplay muted controls></audio>
-            <button id="local-mute-buton" disabled>映像・音声OFF</button>
+            <audio id="local-audio" style="width:stretch;" autoplay muted controls></audio>
+            <button id="local-mute-buton" disabled>Video/sound OFF</button>
           </div>
 
         </div>
@@ -83,11 +98,39 @@
             </div>
         </div>
       </div>
-
     </div>
 
 	<!-- Borg dialog  -->
+	<div class="borgDialog" id="idAlert" style="background-color:#FFFFFF; visibility:hidden; position:absolute; border-width:thick; border-style:ridge; width:10%; box-shadow:10px 10px 10px rgba(0,0,0,0.5); border-radius:15px;">
+		<div style="float:right"><div onclick="checkBorgClose(0)"><img src="close03-001.png"></div></div>
+		<div id="idAlertTitle" style="background-color:#C0C0C0; text-align:center; padding:10px 0px; border-radius:5px 5px 0px 0px;"></div>
+		<div style="margin:0px 0px 0px 0px;">
+			<div style="display:table; float:left; width:40%; height:75px;"><p style="display:table-cell;vertical-align:middle;text-align:center;"><img   src="question_48x48.png"></p></div>
+			<div style="display:table; height:75px;"><div id="idAlertMessage" style="display:table-cell;vertical-align:middle;"></div></div>
+			<div style="margin:2% 5% 2% 5%; border:solid 1px #808080;">
+				<form name="radioButtons">
+				<label><input type="radio" name="borg">　　未選択　　</label><br>
+				<label><input type="radio" name="borg">0 　感じない　</label><br>
+				<label><input type="radio" name="borg">0.5 非常に弱い</label><br>
+				<label><input type="radio" name="borg">1 　やや弱い　</label><br>
+				<label><input type="radio" name="borg">2 　弱い　　　</label><br>
+				<label><input type="radio" name="borg">3 　　　　　　</label><br>
+				<label><input type="radio" name="borg">4 　多少強い　</label><br>
+				<label><input type="radio" name="borg">5 　強い　　　</label><br>
+				<label><input type="radio" name="borg">6 　　　　　　</label><br>
+				<label><input type="radio" name="borg">7 　とても強い</label><br>
+				<label><input type="radio" name="borg">8 　　　　　　</label><br>
+				<label><input type="radio" name="borg">9 　　　　　　</label><br>
+				<label><input type="radio" name="borg">10　非常に強い</label><br>
+				</form>
+			</div>
+		</div>
+		<div style="padding:10px 0px; text-align:center; background-color:#C0C0C0;">
+		<input style="border-radius:5px; font-size:large; width:50%;" type="button" value="OK" onclick="checkBorgClose(1)">
+		</div>
+    </div>
 
+  </div>
 
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@skyway-sdk/room/dist/skyway_room-latest.js"></script>
   <script type="text/javascript" src="key.js"></script>

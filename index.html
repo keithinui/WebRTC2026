@@ -8,40 +8,86 @@
   </head>
   <body>
 
-  <div class="grid-container">
+    <!-- Main Display  -->
+    <div class="container0">
+      <div class="container100">
 
-      <div id="remote" class="remote-view">
-        <div class="remote-stream">
-          <video id="remote-video" autoplay playsinline></video>
+        <div class="container110">
+          <div class="canvas_warp" id="canvas_warp">
+            <!-- Video(Remote) -->
+            <div class="remote-stream">
+              <video id="remote-video" autoplay playsinline></video>
+              <audio id="remote-audio" class="remotteAudio"autoplay controls></audio><p>
+              <div id="button-area"class="buttonArea"></div>
+            </div>
+          </div>
         </div>
-        <audio id="remote-audio" class="absoluteRight"autoplay controls></audio>
-        <div id="button-area"class="absoluteLeft"></div>
-      </div>
 
-
-      <div id="local" class="local-view">
-        <h1 class="heading">Remote Pulmonary Rehabilitation System</h1>
-        <input id="room-name" placeholder="Room name"></input><br>
-        <button id="join-button" class="buttons">Join</button>
-        <button id="leave-button" class="buttons" disabled>Leave</button><p>
-
-        <div class="local-stream">
-          <video id="local-video" autoplay playsinline></video>
+        <!-- Waveform area -->
+        <div class="container150">
+          <div id="canvas_wrapper">
+            <canvas id="waveformCanvas"></canvas>
+          </div>
         </div>
-        <audio id="local-audio" autoplay muted controls></audio>
-        <button id="local-mute-buton" disabled>映像・音声OFF</button>
       </div>
 
-      <!-- Paramaters -->
-      <div class="parameter-view">
-        <c class="colorPR">  <a class="note">PR[bpm] </a><a class="data" id="textPR">24 </a></c>
-        <c class="colorRR">  <a class="note">RR[bpm] </a><a class="data" id="textRR">84 </a></c>
-        <c class="colorSpO2"><a class="note">SpO2[%] </a><a class="data" id="statusSpo2">98 </a></c>
-        <c class="colorOther"><a class="note">Battery[%] </a><a class="note" id="statusBatteryLavel">95 </a></c>
+      <div class="container200">
+        <div class="container210">
+          <div class="container213">
+            <h1 class="heading">Remote Pulmonary Rehabilitation System</h1><p>
+            <input id="room-name" placeholder="Room name"></input>
+          </div>
+          <div class="container215">
+            <button id="join-button" class="buttons" style="width:10vw; height:4vh;">Join Room</button>
+            <button id="leave-button" class="buttons" style="width:10vw; height:4vh;" disabled>Leave Room</button>
+
+            <div class="local-stream">
+              <video id="local-video" autoplay playsinline></video>
+            </div>
+            <audio id="local-audio" autoplay muted controls></audio>
+            <button id="local-mute-buton" disabled>映像・音声OFF</button>
+          </div>
+
+        </div>
+
+        <div class="container230">
+          <!-- Messages and button -->
+          <div class="container232">
+            <button class="buttons" id="js-send-trigger"     style="background:'' ">Send Waveforms</button>
+            <button class="buttons" id="js-send-borgTrigger" style="background:'' ">Borg</button>
+            <button class="buttons" id="js-volume-up"        style="">Vol Up</button>
+            <button class="buttons" id="js-volume-down"      style="">Down</button>
+            <button class="buttons" id="capture"             style="">Capture</button>
+          </div>
+
+          <div class="container234">
+          </div>
+
+        </div>
+
+        <div class="container250">
+          <!-- Trend graphs  -->
+            <div class="parameterPR">
+              <div class="dataPR">   <div class="note">PR [bpm]</div><div class="data" id="textPR">---</div></div>
+              <div class="graph01">Trend Graph (PR)</div>
+            </div>
+
+            <div class="parameterSpO2">
+              <div class="dataSpO2"> <div class="note">SpO2 [%]</div><div class="data" id="statusSpo2">--</div></div>
+              <div class="graph01">Trend Graph (SpO2)</div>
+            </div>
+
+            <div class="parameterRR">
+              <div class="dataRR">   <div class="note">RR [bpm]</div><div class="data" id="textRR">--</div></div>
+              <div class="graph01">Trend Graph (RR)</div>
+            </div>
+        </div>
       </div>
 
+    </div>
 
-  </div>
+	<!-- Borg dialog  -->
+
 
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@skyway-sdk/room/dist/skyway_room-latest.js"></script>
   <script type="text/javascript" src="key.js"></script>
